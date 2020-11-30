@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header h1 {
+  margin: 1rem;
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
+#app {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#app form {
+  margin: 0 auto;
+}
