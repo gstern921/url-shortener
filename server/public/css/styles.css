@@ -66,7 +66,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  overflow: visible;
 }
 .standard-input {
   padding: 1rem;
@@ -76,11 +76,19 @@ body {
   display: inline-block;
   border: 2px solid grey;
   margin-bottom: 1.5rem;
+  min-width: 350px;
 }
 
 .standard-input-label {
   color: grey;
   padding-bottom: 0.5rem;
+}
+
+.standard-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
 }
 
 #submit-button {
@@ -90,6 +98,7 @@ body {
   border: none;
   color: white;
   border-radius: 6px;
+  width: 250px;
 }
 
 .modal-background {

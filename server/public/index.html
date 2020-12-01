@@ -14,27 +14,29 @@
       <h2 v-if="error" class="error">{{JSON.stringify(error)}}</h2>
       <div class="app-container">
         <form class="main-form" @submit.prevent="createUrl()">
-          <label class="standard-input-label" for="url"> URL: </label>
-          <input
-            class="url-input standard-input"
-            name="url"
-            v-model="url"
-            id="url"
-            type="text"
-            placeholder="Enter URL Here"
-          />
-          <label class="standard-input-label" for="slug">
-            Shortened Name:
-          </label>
+          <div class="standard-input-container">
+            <label class="standard-input-label" for="url"> URL: </label>
+            <input
+              class="url-input standard-input"
+              name="url"
+              v-model="url"
+              id="url"
+              type="text"
+              placeholder="Enter URL Here"
+            />
+            <label class="standard-input-label" for="slug">
+              Shortened Name:
+            </label>
 
-          <input
-            class="name-input standard-input"
-            name="slug"
-            v-model="slug"
-            id="slug"
-            type="text"
-            placeholder="Enter shortened name here"
-          />
+            <input
+              class="name-input standard-input"
+              name="slug"
+              v-model="slug"
+              id="slug"
+              type="text"
+              placeholder="Enter shortened name here"
+            />
+          </div>
           <button id="submit-button" type="submit">Create</button>
         </form>
         <div
