@@ -11,7 +11,7 @@ const app = new Vue({
     async createUrl() {
       const { url, slug } = this;
       console.log(url, slug);
-      fetch("http://localhost:1337/url", {
+      fetch("/url", {
         method: "POST",
         body: JSON.stringify({ url, slug }),
         headers: {
