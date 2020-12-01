@@ -4,24 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
-    <title>cdg.sh</title>
+    <title>GST.sh</title>
   </head>
   <body>
-    <header>
-      <h1>gst.sh - Short URLs for gst</h1>
-    </header>
     <main id="app">
+      <header class="header">
+        <h1>GST.sh - Shorten URLs</h1>
+      </header>
       <h2 v-if="error" class="error">{{JSON.stringify(error)}}</h2>
-      <form @submit.prevent="createUrl()">
-        <label for="url">URL</label>
-        <input name="url" v-model="url" id="url" type="text" />
-        <label for="slug">slug</label>
-        <input name="slug" v-model="slug" id="slug" type="text" />
-        <button type="submit">Create</button>
-      </form>
-      <pre v-if="created">
-        {{JSON.stringify(created, null, 2)}}
-      </pre>
+      <div class="app-container">
+        <form class="main-form" @submit.prevent="createUrl()">
+          <label for="url">
+            <input
+              class="url-input standard-input"
+              name="url"
+              v-model="url"
+              id="url"
+              type="text"
+              placeholder="Enter URL Here"
+          /></label>
+          <label for="slug">
+            <input
+              class="name-input standard-input"
+              name="slug"
+              v-model="slug"
+              id="slug"
+              type="text"
+              placeholder="Enter shortened name here"
+            />
+          </label>
+          <button id="submit-button" type="submit">Create</button>
+        </form>
+        <div v-if="created" class="modal-background">
+          <div class="modal">
+            <h2 class="modal-title">Success!</h2>
+            <p class="modal-message">Visit your link <a href="">here</a></p>
+          </div>
+        </div>
+        <!-- <pre v-if="created">
+          
+          {{JSON.stringify(created, null, 2)}}
+        </pre> -->
+      </div>
     </main>
 
     <script src="js/vue.js" type="text/javascript"></script>
