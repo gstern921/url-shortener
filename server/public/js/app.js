@@ -5,12 +5,13 @@ const app = new Vue({
     slug: "",
     created: null,
     error: null,
+    showSuccessModal: false,
   },
   methods: {
     async createUrl() {
       const { url, slug } = this;
       console.log(url, slug);
-      fetch("/url", {
+      fetch("http://localhost:1337/url", {
         method: "POST",
         body: JSON.stringify({ url, slug }),
         headers: {
@@ -24,6 +25,7 @@ const app = new Vue({
           } else {
             this.error = null;
             this.created = data;
+            this.showSuccessModal = true;
           }
         })
         .catch((err) => {
@@ -31,5 +33,9 @@ const app = new Vue({
           this.error = err.message;
         });
     },
+    closeSuccessModal() {
+      this.showSuccessModal = false;
+    },
   },
 });
+console.log(app.showSuccessModal);

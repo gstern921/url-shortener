@@ -65,8 +65,7 @@ body {
 .main-form {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  text-align: center;
+  align-items: center;
   width: 100%;
 }
 .standard-input {
@@ -76,7 +75,12 @@ body {
   width: 60%;
   display: inline-block;
   border: 2px solid grey;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.standard-input-label {
+  color: grey;
+  padding-bottom: 0.5rem;
 }
 
 #submit-button {
@@ -98,36 +102,60 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 2;
+  opacity: 1;
   background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  transition: all 0.5s ease-in-out;
 }
 
 .modal {
   min-width: 500px;
   height: 200px;
-  text-align: center;
   background-color: #fff;
   text-align: center;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
 .modal-title {
   margin-bottom: 1rem;
   font-size: 2rem;
+  margin-top: auto;
   color: lightseagreen;
 }
 
-.modal-message {
+.modal-button-group {
+  margin-top: auto;
+  display: flex;
+}
+
+.modal-button {
+  padding: 1rem;
+  flex: 1;
+  border: none;
+  cursor: pointer;
   font-size: 1.2rem;
+}
+
+.modal-button-cta {
+  background-color: lightseagreen;
+  color: white;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .hide {
   opacity: 0;
   pointer-events: none;
-}
-
-.modal .blur {
-  filter: blur(3px);
 }

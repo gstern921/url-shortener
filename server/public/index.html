@@ -14,31 +14,54 @@
       <h2 v-if="error" class="error">{{JSON.stringify(error)}}</h2>
       <div class="app-container">
         <form class="main-form" @submit.prevent="createUrl()">
-          <label for="url">
-            <input
-              class="url-input standard-input"
-              name="url"
-              v-model="url"
-              id="url"
-              type="text"
-              placeholder="Enter URL Here"
-          /></label>
-          <label for="slug">
-            <input
-              class="name-input standard-input"
-              name="slug"
-              v-model="slug"
-              id="slug"
-              type="text"
-              placeholder="Enter shortened name here"
-            />
+          <label class="standard-input-label" for="url"> URL: </label>
+          <input
+            class="url-input standard-input"
+            name="url"
+            v-model="url"
+            id="url"
+            type="text"
+            placeholder="Enter URL Here"
+          />
+          <label class="standard-input-label" for="slug">
+            Shortened Name:
           </label>
+
+          <input
+            class="name-input standard-input"
+            name="slug"
+            v-model="slug"
+            id="slug"
+            type="text"
+            placeholder="Enter shortened name here"
+          />
           <button id="submit-button" type="submit">Create</button>
         </form>
-        <div v-if="created" class="modal-background">
-          <div class="modal">
+        <div
+          v-on:click="closeSuccessModal"
+          id="modal-background"
+          class="modal-background"
+          v-bind:class="{ hide: !showSuccessModal }"
+        >
+          <div v-bind:class="{ hide: !showSuccessModal }" class="modal">
+            <span
+              aria-role="button"
+              v-on:click="console.log('a')"
+              class="close-button"
+              >&#10005;</span
+            >
             <h2 class="modal-title">Success!</h2>
-            <p class="modal-message">Visit your link <a href="">here</a></p>
+            <div class="modal-button-group">
+              <button class="modal-button modal-button-cta">
+                <a class="modal-message modal-cta-message">Visit your link</a>
+              </button>
+              <button
+                @click="closeSuccessModal"
+                class="modal-button modal-button-close"
+              >
+                <a class="modal-message modal-close-message">Close</a>
+              </button>
+            </div>
           </div>
         </div>
         <!-- <pre v-if="created">
