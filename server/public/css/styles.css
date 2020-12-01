@@ -29,7 +29,9 @@ body {
   text-align: center;
   color: dimgray;
   margin-bottom: 2rem;
+  margin-top: 1.5rem;
   font-weight: lighter;
+  z-index: 2;
 }
 
 .error {
@@ -38,6 +40,7 @@ body {
 
 #app {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -54,6 +57,28 @@ body {
 
 #app form {
   margin: 0 auto;
+}
+
+.app-logo-container {
+  top: -55px;
+
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 250px;
+  height: 120px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90%;
+}
+
+.app-logo {
+  width: 100px;
+  margin-right: 25px;
+  margin-bottom: 10px;
+  opacity: 70%;
 }
 
 .app-container {
@@ -99,6 +124,7 @@ body {
   color: white;
   border-radius: 6px;
   width: 250px;
+  cursor: pointer;
 }
 
 .modal-background {
@@ -153,6 +179,8 @@ body {
 
 .modal-button-cta {
   background-color: lightseagreen;
+}
+.modal-button-cta a {
   color: white;
 }
 

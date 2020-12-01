@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <link rel="icon" type="image/png" href="img/logo.png" />
     <title>GST.sh</title>
   </head>
   <body>
     <main id="app">
+      <div class="app-logo-container">
+        <img src="img/logo.png" alt="logo" class="app-logo" />
+      </div>
       <header class="header">
         <h1>GST.sh - Shorten URLs</h1>
       </header>
@@ -55,21 +59,25 @@
             <h2 class="modal-title">Success!</h2>
             <div class="modal-button-group">
               <button class="modal-button modal-button-cta">
-                <a class="modal-message modal-cta-message">Visit your link</a>
+                <a
+                  v-bind:href="ctaLinkUrl"
+                  class="modal-message modal-cta-message"
+                  >Visit your link</a
+                >
               </button>
               <button
                 @click="closeSuccessModal"
                 class="modal-button modal-button-close"
               >
-                <a class="modal-message modal-close-message">Close</a>
+                Close
               </button>
             </div>
           </div>
         </div>
-        <!-- <pre v-if="created">
+        <pre v-if="created">
           
           {{JSON.stringify(created, null, 2)}}
-        </pre> -->
+        </pre>
       </div>
     </main>
 

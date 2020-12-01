@@ -6,6 +6,7 @@ const app = new Vue({
     created: null,
     error: null,
     showSuccessModal: false,
+    ctaLinkUrl: "/",
   },
   methods: {
     async createUrl() {
@@ -23,8 +24,10 @@ const app = new Vue({
           if (data.status === "error") {
             throw data;
           } else {
+            console.log(data);
             this.error = null;
             this.created = data;
+            this.ctaLinkUrl = "/" + data.url.slug;
             this.showSuccessModal = true;
           }
         })
@@ -38,4 +41,3 @@ const app = new Vue({
     },
   },
 });
-console.log(app.showSuccessModal);

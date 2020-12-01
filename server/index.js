@@ -18,7 +18,7 @@ const STATUS_SUCCESS = "success";
 const STATUS_FAIL = "fail";
 const STATUS_ERROR = "error";
 const defaultSlugLength = 5;
-const { MONGO_URI, PORT = 1337, NODE_ENV = "development" } = process.env;
+const { MONGO_URI, PORT = 5000, NODE_ENV = "development" } = process.env;
 
 const IS_DEVELOPMENT = NODE_ENV === "development";
 
