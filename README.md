@@ -1,3 +1,3 @@
 # url-shortener
 
-An express app that allows users to create custom shortened URLs
+An express app using Vue on the front end that allows users to create custom shortened URLs
